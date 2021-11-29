@@ -15,7 +15,7 @@
 
     <div class="banner-list">
         <h1 id="title-banner">Gift Guia<br>
-            Visualise suas listas de presentes<br>
+            Visualize suas listas de presentes<br>
             ⇣
         </h1>
     </div>
@@ -25,52 +25,41 @@
     <div class="container-list">
         <h1>Chá de casa nova</h1>
 
-        <!-- Arrays -->
-        <?php
-        $itens = [
-                "Abajur" => ["R$ 500,00", "exemplo.com.br/item", 1],
-                "Sofá" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Lixeira" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Geladeira" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Tv" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Pipoqueira" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Batedeira" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Escorredor" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Livro de receitas" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Mesa de Centro" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Copos" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Cafeteira" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Luminária" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Prateleira" => ["R$ 500,00", "exemplo.com.br", 1],
-                "Aspirador de pó" => ["R$ 500,00", "exemplo.com.br", 1]
-                 ];
-        ?>
+        <!-- LISTA - leitura arquivo CSV -->
+        <?php $itens = file("itens-lista.csv"); ?>
 
-        <!-- Lista - leitura dos arrays -->
         <ul>
-            <?php foreach ($itens as $item => $elementos): ?>
-            <ol><?= $item ?></ol>
+            <?php foreach ($itens as $item): ?>
+                <ol><?= $item ?></ol>
             <?php endforeach ?>
         </ul>
 
-        <!-- Tabela - leitura dos arrays -->
+        <!-- TABELA - leitura arquivo CSV -->
+        <?php
+        $itens = file("itens-tabela.csv");
+        
+            for($i = 0; $i < sizeof($itens); $i++){
+                $itens[$i] = explode(",", $itens[$i]);
+            }
+        ?>
+
         <table>
             <tr>
-                <th>Item</th>
-                <th>Valor</th>
-                <th>Site</th>
-                <th>Quantidade</th>
-            </tr>
-            <?php foreach ($itens as $item => $elementos): ?>
+				<th>Item</th>
+				<th>Valor</th>
+				<th>Site</th>
+				<th>Quantidade</th>
+			</tr> 
+
+            <?php foreach ($itens as $item): ?>
             <tr>
-                <td><?= $item ?></td>
-                <?php foreach ($elementos as $detalhes): ?>
-                <td><?= $detalhes ?></td>
+                <?php foreach ($item as $dados): ?>
+                    <td> <?= $dados ?> </td>
                 <?php endforeach ?>
             </tr>
             <?php endforeach ?>
         </table>
-        
+
     </div>
 
     <!-- footer -->
