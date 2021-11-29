@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100%;
+    height: 100%;
+    background-color: #B8DDD2;
+}
+
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-fixo {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    transition: all .0s;
+    width: 100%;
+    box-shadow: 0px 1px 10px rgb(153, 153, 153);
+}
+
+#icone {
+    margin: 0px 10px 0px 10px;
+    width: 30px;
+    height: 30px;
+}
+
+#menu ul {
+    padding: 0px;
+    margin: 0px;
+    background-color: #FFDAD1;
+    list-style: none;
+}
+
+#menu ul li { display: inline; }
+
+#menu ul li a {
+    padding: 20px 10px;
+    display: inline-block;
+
+    /* Link */
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 3px solid #FFDAD1;
+}
+
+#menu ul li a:hover {
+    transition: 1s;
+    color: #CC0704;
+    border-bottom: 3px solid #CC0704;
+}
+
+/*botao entrar*/
+#menu-right { float: right; }
+
+/*botao entrar hover*/
+#menu-right a:hover {
+    background-color: #ffc1c6;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all .3s;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FFDAD1;
+    /*Image by https://br.freepik.com/fotos/fundo' > Fundo foto criado por freepik - br.freepik.com*/
+    background-image: url("/_img/elevated-view-of-gifts-blank-tags-and-ribbon.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 50px;
+    padding: 60px 60px 60px 60px;
+    position: relative;
+    background-color: #FDFEFE;
+    border-radius: 12px;
+    color: #333;
+    font-size: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px 0px 20px 0px;
+}
+
+.container .grid p { text-align: justify; }
+
+.container .grid #gift-flat {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container h1 { color: #ff9da5; }
+
+.container ul { margin: 20px 0px 20px 0px; }
+/*
+.container table {
+    margin: 20px 0px 0px 0px;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ffc1c6;
+}
+
+.container th {
+    background-color: #ffc1c6;
+    border: 1px solid #ffc1c6;
+    text-align: left;
+    padding: 8px;
+}
+
+.container td {
+    border: 1px solid #ffc1c6;
+    text-align: left;
+    padding: 8px;
+}
+*/
+footer {
+    position: absolute;
+    width: 100%;
+    padding: 30px 0 30px;
+    background: #FFDAD1;
+    box-shadow: 0px 1px 10px rgb(153, 153, 153);
+}
+
+footer p {
+    float: left;
+    margin-left: 10px;
+    color: #333;
+    font-size: 15px;
+}
+
+footer p:hover { color: #CC0704; }
+
+/*LISTA.PHP CSS --- LISTA.PHP CSS --- LISTA.PHP CSS*/
+.banner-list {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FFDAD1;
+    /*Image by rawpixel.com*/
+    background-image: url("/_img/image-from-rawpixel-id-2828333-jpeg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-banner {
+    color: #ffffff;
+    text-shadow: 0px 1px 10px rgb(99, 99, 99);
+    text-align: center;
+    font-size: 50px;
+}
+
+#title-page {
+    color: #ffffff;
+    margin: 35px 0 35px 50px;
+    text-shadow: 0px 1px 10px rgb(153, 153, 153);
+}
+
+.container-list {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 10px 50px 50px 50px;
+    padding: 60px 60px 60px 60px;
+    position: relative;
+    background-color: #FDFEFE;
+    border-radius: 12px;
+    color: #333;
+    font-size: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px 0px 20px 0px;
+}
+
+.container-list .grid p { text-align: justify; }
+
+.container-list .grid #gift-flat {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-list h1 { color: #ff9da5; }
+
+.container-list ul { margin: 20px 0px 20px 0px; }
+
+.container-list table {
+    margin: 20px 0px 0px 0px;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ffc1c6;
+}
+
+.container-list th {
+    background-color: #ffc1c6;
+    border: 1px solid #ffc1c6;
+    text-align: left;
+    padding: 8px;
+}
+
+.container-list td {
+    border: 1px solid #ffc1c6;
+    text-align: left;
+    padding: 8px;
+}
