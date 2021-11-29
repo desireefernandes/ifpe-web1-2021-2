@@ -2,30 +2,29 @@
 <html lang="pt">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/_css/style.css">
-	<link rel="icon" type="imagem/png" href="/_img/gift.png" />
-	<title>Gift Guia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/_css/style.css">
+    <link rel="icon" type="imagem/png" href="/_img/gift.png" />
+    <title>Gift Guia</title>
 </head>
 
-<!-- Construa um HTML que tenha ao menos uma lista com 4 elementos e uma tabela com 4 linhas e pelo menos 3 colunas. -->
-
 <body>
-	<!-- navbar -->
+    <!-- navbar -->
     <?php include 'header.php'; ?>
 
     <div class="banner-list">
         <h1 id="title-banner">Gift Guia<br>
-			Visualise suas listas de presentes<br>
-			⇣
+            Visualise suas listas de presentes<br>
+            ⇣
         </h1>
     </div>
-    
+
     <h1 id="title-page">Minhas listas de presentes</h1>
-    
-	<div class="container-list">
-		<h1>Chá de casa nova</h1>
+
+    <div class="container-list">
+        <h1>Chá de casa nova</h1>
+
         <!-- Arrays -->
         <?php
         $itens = [
@@ -47,27 +46,34 @@
                  ];
         ?>
 
+        <!-- Lista - leitura dos arrays -->
+        <ul>
+            <?php foreach ($itens as $item => $elementos): ?>
+            <ol><?= $item ?></ol>
+            <?php endforeach ?>
+        </ul>
+
         <!-- Tabela - leitura dos arrays -->
-		<table>
-			<tr>
-				<th>Item</th>
-				<th>Valor</th>
-				<th>Site</th>
-				<th>Quantidade</th>
-			</tr> 
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Valor</th>
+                <th>Site</th>
+                <th>Quantidade</th>
+            </tr>
             <?php foreach ($itens as $item => $elementos): ?>
             <tr>
                 <td><?= $item ?></td>
                 <?php foreach ($elementos as $detalhes): ?>
-                    <td><?= $detalhes ?></td>
+                <td><?= $detalhes ?></td>
                 <?php endforeach ?>
             </tr>
             <?php endforeach ?>
         </table>
+        
+    </div>
 
-	</div>
-
-	<!-- footer -->
+    <!-- footer -->
     <?php include 'footer.php'; ?>
 
 </body>
