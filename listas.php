@@ -1,14 +1,3 @@
-<?php
-	$item = $_POST['item'];
-	$valor = $_POST['valor'];
-	$site = $_POST['site'];
-    $quantidade = $_POST['quantidade'];
-
-	$fp = fopen('dados.csv', 'a');
-	fwrite($fp,"$item, $valor, $site, $quantidade". PHP_EOL);
-	fclose($fp);
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -41,7 +30,7 @@
         <div class="grid">
             <a class="abrir-button" href="#abrirModal">Adicionar item</a>
             <a class="editar-button">Editar item</a>
-            <a class="deletar-button">Deletar item</a>
+            <a class="deletar-button">Deletar lista</a>
         </div>
         
         <!-- FORMULÁRIO MODAL 
@@ -49,14 +38,14 @@
         <div id="abrirModal" class="modal">
 
             <!--Conteúdo próprio-->
-            <!--Conteiner Formulário-->
+            <!--Container Formulário-->
             <div class="container-list">
                 <!--Botão fechar-->
                 <a href="#fechar" title="Fechar" class="fechar">x</a>
                 <!--Formulário-->
                 <div class="form">
                     <h3>Adicionar item</h3>
-                    <form action="listas.php" method="POST">
+                    <form action="save.php" method="POST">
                         <input type="text" name="item" placeholder="Item">
                         <input type="number" name="valor" placeholder="Valor">
                         <input type="text" name="site" placeholder="Site">
@@ -84,14 +73,17 @@
                 <th>Valor</th>
                 <th>Site</th>
                 <th>Quantidade</th>
+                <th>Remover?</th>
             </tr>
 
-            <?php foreach ($itens as $item): ?>
-            <tr>
-                <?php foreach ($item as $dados): ?>
-                <td> <?= $dados ?> </td>
-                <?php endforeach ?>
-            </tr>
+            <?php foreach ($itens as $chave => $item): ?>
+                <tr>
+                    <?php foreach ($item as $dados): ?>
+                    <td> <?= $dados ?> </td>
+                    <?php endforeach ?>
+                    <!--delete-->
+                    <td><a class="deletar-button" href="delete.php? id= <?= $chave ?>">Deletar</a>
+                </tr>
             <?php endforeach ?>
         </table>
         <!-- END TABELA -->
